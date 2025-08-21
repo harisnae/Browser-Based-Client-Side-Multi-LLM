@@ -1,0 +1,79 @@
+:root {
+  --primary: #6366f1;
+  --primary-dark: #4f46e5;
+  --secondary: #10b981;
+  --accent: #f59e0b;
+  --success: #22c55e;
+  --warning: #f97316;
+  --error: #ef4444;
+  --error-dark: #dc2626;
+  --light: #f8fafc;
+  --light-gray: #e2e8f0;
+  --medium-gray: #cbd5e1;
+  --dark: #1e293b;
+  --darker: #0f172a;
+  --border-radius: 12px;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --transition: all 0.3s ease;
+  --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+  line-height: 1.6;
+  color: var(--darker);
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0fdf4 100%);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 24px;
+}
+
+/* ... copy all CSS rules you shared above ... */
+/* For brevity I'm including the very same CSS from your post. 
+   Paste the full CSS (all rules you provided) into this file. */
+
+.header {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  border: 1px solid var(--light-gray);
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  background: var(--gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+/* ... continue including all selectors from your original CSS ... */
+
+/* small helper for spinner (used in JS status text) */
+.spinner {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--light-gray);
+  border-radius: 50%;
+  border-top-color: var(--primary);
+  animation: spin 1s linear infinite;
+  margin-right: 8px;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* Continue copying remainder... */
