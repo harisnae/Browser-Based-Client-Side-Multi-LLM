@@ -1,0 +1,102 @@
+
+---
+
+## index.html
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Multi-model LLM — Browser Deployment</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="main-content">
+      <div class="header">
+        <h1>🧠 Browser-Based AI Models</h1>
+        <p class="subtitle">Privacy-First, Local Inference (Web Worker)</p>
+        <div class="status-badge"><span>🔒</span><span>100% Local</span></div>
+      </div>
+
+      <div class="model-selection">
+        <h3>🤖 Select a Model</h3>
+        <div class="model-dropdown">
+          <select id="modelSelect">
+            <option value="">Choose a model to get started...</option>
+            <option value="Xenova/blenderbot_small-90M">BlenderBot Small (90M)</option>
+            <option value="Xenova/distilbert-base-uncased-finetuned-sst-2-english">DistilBERT SST-2</option>
+            <option value="Xenova/all-MiniLM-L6-v2">MiniLM L6</option>
+            <option value="Xenova/t5-small">T5 Small</option>
+            <option value="Xenova/gpt2">GPT-2 (124M)</option>
+          </select>
+        </div>
+
+        <div id="modelInfo" class="model-info-card" style="display:none;">
+          <div class="model-specs">
+            <div class="spec-item"><span class="spec-label">Parameters</span><span id="modelParams" class="spec-value">-</span></div>
+            <div class="spec-item"><span class="spec-label">Type</span><span id="modelType" class="spec-value">-</span></div>
+            <div class="spec-item"><span class="spec-label">Size</span><span id="modelSize" class="spec-value">-</span></div>
+            <div class="spec-item"><span class="spec-label">Task</span><span id="modelTask" class="spec-value">-</span></div>
+          </div>
+          <p id="modelDescription" style="color:#64748b;"></p>
+        </div>
+      </div>
+
+      <div class="chat-container">
+        <div class="chat-header">
+          <span>💬 Chat</span>
+          <span id="currentModel">No model loaded</span>
+        </div>
+
+        <div id="chatHistory" class="chat-history">
+          <div class="current-status"><div class="status-text">Welcome! Select a model to begin.</div></div>
+        </div>
+
+        <div class="input-area">
+          <div class="input-group">
+            <textarea id="userInput" placeholder="Type your message..." rows="3"></textarea>
+          </div>
+          <div class="controls">
+            <button id="generateBtn" class="btn-primary" disabled>🚀 Generate</button>
+            <button id="cancelBtn" class="btn-danger" style="display:none;">⛔ Cancel</button>
+            <button id="clearBtn" class="btn-secondary">🗑️ Clear</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar">
+      <div class="loading-info">
+        <h3>📊 Loading Status</h3>
+        <div class="current-status"><div id="currentStatus" class="status-text">Ready</div></div>
+
+        <div id="progressContainer" class="loading-progress" style="display:none;">
+          <div class="progress-bar"><div id="progressFill" class="progress-fill"></div></div>
+          <div id="progressText" class="progress-text">0%</div>
+        </div>
+      </div>
+
+      <div class="process-explanation">
+        <h3>🔧 How it works</h3>
+        <p style="color:#64748b; font-size:0.95rem;">Model loading and inference run inside a dedicated Web Worker to keep the UI responsive. Choose small models for best browser performance.</p>
+      </div>
+
+      <div class="educational-content">
+        <h3>🎯 Why browser-based?</h3>
+        <ul>
+          <li>Privacy — data stays local</li>
+          <li>No server costs</li>
+          <li>Low-latency</li>
+          <li>Works offline after assets are cached</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- main UI script (module so that we can import modules if needed) -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>
