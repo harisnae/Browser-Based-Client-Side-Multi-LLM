@@ -25,3 +25,6 @@ This repo demonstrates:
    ```bash
    git clone https://github.com/<you>/multi-model-llm-browser-deployment.git
    cd multi-model-llm-browser-deployment
+
+## Demo
+https://harisnae.github.io/Browser-Based-Client-Side-Multi-LLM/
