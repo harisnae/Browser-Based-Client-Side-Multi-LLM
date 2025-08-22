@@ -157,6 +157,9 @@ el.generateBtn.addEventListener('click', () => {
   updateStatus('Generating...');
 
   worker.postMessage({ type: 'generate', input, pipelineType: pipeline });
+  
+// Clear the input field after sending the message
+el.userInput.value = '';
 });
 
 // --- Cancel Button ---
