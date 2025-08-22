@@ -182,9 +182,13 @@ function addChatBubble(role, text) {
 }
 
 function displayResult(result) {
-  // For classification or embeddings, show JSON pretty
   if (Array.isArray(result) && typeof result[0] === 'object') {
-    assistantContentEl.textContent = JSON.stringify(result, null, 2);
+    // Check if the array contains objects with 'generated_text'
+    if (result[0].hasOwnProperty('generated_text')) {
+      assistantContentEl.textContent = result[0].generated_text;
+    } else {
+      assistantContentEl.textContent = JSON.stringify(result, null, 2);
+    }
   } else {
     assistantContentEl.textContent = String(result);
   }
