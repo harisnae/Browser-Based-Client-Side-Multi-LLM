@@ -212,3 +212,9 @@ button:disabled {
     max-width: 85%;
   }
 }
+
+/* --- Remove the bullets from the list --- */
+.educational-content ul {
+  list-style-type: none; /* Remove bullets */
+  padding-left: 0; /* Remove default padding */
+}
