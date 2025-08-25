@@ -80,17 +80,23 @@ body {
 /* --- Input Area --- */
 .input-container {
   display: flex;
+  flex-direction: column; /* Change to column to stack input and buttons vertically */
   gap: 0.5rem;
-  flex-wrap: wrap;
+}
+
+.input-group {
+  flex: 1; /* Ensure the input group takes up the full width */
+  display: flex;
 }
 
 #userInput {
-  flex: 1 1 auto;
+  flex: 1 1 auto; /* Ensure the textarea takes up the full width of the input group */
   min-width: 0;
   padding: 0.5rem 1rem;
   border: 1px solid #ccc;
   border-radius: 12px;
   font-size: 1rem;
+  width: 100%; /* Ensure it takes full width */
 }
 
 /* --- Buttons --- */
